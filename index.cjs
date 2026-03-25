@@ -17,7 +17,10 @@ module.exports = Application({
       }
     })
   ],
-  mailSubjectAdmin: '{{site.name | safe}} 上有新评论了',
+  async postSave(comment) {
+    // do what ever you want after comment saved
+  },
+	mailSubjectAdmin: '{{site.name | safe}} 上有新评论了',
     mailTemplateAdmin: `<div style="background: url(https://tva3.sinaimg.cn/large/c56b8822ly1h62npb7s1ej201y01y0lh.jpg);padding:40px 0px 20px;margin:0px;background-color:#FFCDCE;width:100%;">
 	<style type="text/css">@media screen and (max-width:600px){.afterimg,.beforeimg{display:none!important}}</style>
 	<div style="border-radius: 10px 10px 10px 10px;font-size:14px;color: #555555;width: 530px;font-family:'Century Gothic','Trebuchet MS','Hiragino Sans GB',微软雅黑,'Microsoft Yahei',Tahoma,Helvetica,Arial,'SimSun',sans-serif;margin:50px auto;max-width:100%;background: ##ffffff;">
@@ -63,7 +66,4 @@ module.exports = Application({
 </div>`
 });
 
-  async postSave(comment) {
-    // do what ever you want after comment saved
-  },
 });
